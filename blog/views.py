@@ -1,16 +1,18 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from rest_framework .permissions import AllowAny
 from .models import Category,Blogs
 from .serealizers import CategorySerealizer, BlogsSerealizer
 
 # Create your views here.
 
 
-class CategoryViewSet(viewsets.ModelViewSet):
+class Category(viewsets.ModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = Category.objects.all()
     serializer_class = CategorySerealizer
     
     
-class BlogsViewSet(viewsets.ModelViewSet):
+class Blogs(viewsets.ModelViewSet):
     queryset = Blogs.objects.all()
     serializer_class = BlogsSerealizer

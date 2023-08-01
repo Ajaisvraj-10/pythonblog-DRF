@@ -1,11 +1,11 @@
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
-from .views import CategoryViewSet, BlogsViewSet
+from .views import Category, Blogs
 
 
 router = DefaultRouter()
-router.register(r'categories',CategoryViewSet)
-router.register(r'blogs',BlogsViewSet)
+router.register(r'categories',Category)
+router.register(r'blogs',Blogs)
 
 urlpatterns = [
     
